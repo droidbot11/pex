@@ -23,7 +23,7 @@ make_metalava(){
 }
 
 make_rom(){
-	masak komodo -j16
+	masak komodo -j10 &
 	zip=$(up out/target/product/phoenix/*zip)
 	echo " "
 	echo "$zip"
