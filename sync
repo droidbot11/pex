@@ -1,23 +1,21 @@
 #!/bin/bash
 
-MANIFEST=git://github.com/ShapeShiftOS/android_manifest.git
-BRANCH=android_11
+MANIFEST=git:https://github.com/Komodo-OS-Rom/manifest
+BRANCH=11
 
 mkdir -p /tmp/rom
 cd /tmp/rom
 
 # Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
 repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-device,-mips,-darwin,-notdefault
-git config --global user.name AtomicXZ
-git config --global user.email achubadyal4@gmail.com
+git config --global user.name Catinice
+git config --global user.email catinice@outlook.com
 
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Bye live display
-cd device/ssos/sepolicy && git fetch https://github.com/ShapeShiftOS/android_device_ssos_sepolicy && git cherry-pick ec381d673ee0369c91a52aad553020eedeab0010 --no-edit
 
-git clone https://github.com/AtomicXZ/device_xiaomi_phoenix -b ssos device/xiaomi/phoenix
-git clone https://github.com/AtomicXZ/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
-git clone https://github.com/AtomicXZ/vendor_xiaomi vendor/xiaomi
+git clone https://github.com/Catinice/device_xiaomi_phoenix -b komodo device/xiaomi/phoenix
+git clone https://github.com/Catinice/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
+git clone https://github.com/Catinice/vendor_xiaomi_phoenix vendor/xiaomi/phoenix
 rm -rf vendor/aosp/charger
