@@ -16,6 +16,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 git clone https://github.com/Catinice/device_xiaomi_phoenix -b komodo device/xiaomi/phoenix
-git clone https://github.com/Catinice/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
+git clone https://github.com/AtomicXZ/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
 git clone https://github.com/Catinice/vendor_xiaomi_phoenix vendor/xiaomi/phoenix
 rm -rf vendor/aosp/charger
