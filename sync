@@ -5,7 +5,7 @@ mkdir -p /tmp/rom
 cd /tmp/rom
 
 # Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
-repo init --no-repo-verify --depth=1 -u https://github.com/Komodo-OS-Rom/manifest -b 11 
+repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b eleven
 git config --global user.name Catinice
 git config --global user.email catinice@outlook.com
 
@@ -15,8 +15,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 
-git clone https://github.com/Catinice/device_xiaomi_phoenix -b komodo device/xiaomi/phoenix
-git clone https://github.com/AtomicXZ/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
-git clone https://github.com/Catinice/vendor_xiaomi_phoenix vendor/xiaomi/phoenix
+git clone https://github.com/Catinice/device_xiaomi_phoenix device/xiaomi/phoenix
+git clone https://github.com/Catinice/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
+git clone https://github.com/Catinice/vendor_xiaomi vendor/xiaomi
 git clone https://github.com/kdrag0n/proton-clang.git --depth=1 prebuilts/clang/host/linux-x86/clang-proton
 rm -rf vendor/aosp/charger

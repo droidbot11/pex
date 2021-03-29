@@ -2,7 +2,7 @@ env: # Environt variable to pass to all tasks
     CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
 task:
-    name: Build komodo
+    name: Build ppui
     timeout_in: 120m
     container:
       image: apon77/aosp:latest
