@@ -4,7 +4,7 @@ rm -rf .repo & # lets remove unnecessary things, so that no storage issue can oc
 
 # Normal build steps
 . build/envsetup.sh
-lunch komodo_phoenix-userdebug
+lunch aosp_phoenix-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,7 +23,7 @@ make_metalava(){
 }
 
 make_rom(){
-	masak komodo -j10 &
+	mka bacon -j10 &
 	zip=$(up out/target/product/phoenix/*zip)
 	echo " "
 	echo "$zip"
