@@ -11,10 +11,12 @@ git config --global user.email catinice@outlook.com
 
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+
 
 git clone https://github.com/Catinice/device_xiaomi_phoenix -b komodo device/xiaomi/phoenix
-git clone https://github.com/Catinice/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
+git clone https://github.com/AtomicXZ/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
 git clone https://github.com/Catinice/vendor_xiaomi_phoenix vendor/xiaomi/phoenix
 git clone https://github.com/kdrag0n/proton-clang.git --depth=1 prebuilts/clang/host/linux-x86/clang-proton
 rm -rf vendor/aosp/charger
