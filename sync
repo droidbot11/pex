@@ -16,4 +16,5 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 git clone https://github.com/Catinice/device_xiaomi_phoenix -b komodo device/xiaomi/phoenix
 git clone https://github.com/Catinice/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
 git clone https://github.com/Catinice/vendor_xiaomi_phoenix vendor/xiaomi/phoenix
+git clone https://github.com/kdrag0n/proton-clang.git --depth=1 prebuilts/clang/host/linux-x86/clang-proton
 rm -rf vendor/aosp/charger
