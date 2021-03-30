@@ -9,7 +9,7 @@ repo init  --no-repo-verify --depth=1 -u https://github.com/PixelPlusUI/manifest
 git config --global user.name Catinice
 git config --global user.email catinice@outlook.com
 
-# Sync source with  -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
+# Sync source with  -q, no need   unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
